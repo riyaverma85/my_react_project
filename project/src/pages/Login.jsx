@@ -6,7 +6,6 @@ const Login = () => {
     let hendleSubmit =(e)=>{
         e.preventDefault()
     }
-  return (
     <>
 <form onSubmit={hendleSubmit}>
   Enter Email <input type='text' name='email' value={Email} onChange={(e)=>{setEmail(e.target.value)}} /><br/>
@@ -14,7 +13,7 @@ const Login = () => {
     <button type='submit'>Login</button>
 </form>
     </>
-  )
-}
+    }
+
 
 export default Login
