@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 const Login = () => {
     let [Email,setEmail]=useState("")
     let [Password,setpassword]=useState("")
-    let hendleSubmit
+    let hendleSubmit =(e)=>{
+        e.preventDefault()
+    }
   return (
     <>
 <form onSubmit={hendleSubmit}>
