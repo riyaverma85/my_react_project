@@ -9,8 +9,8 @@ const Login = () => {
   return (
     <>
 <form onSubmit={hendleSubmit}>
- Enter Email <input type='text' name='email' value={Email} onChange={(e)=>{setEmail(e.target.value)}} /><br/>
- Enter Password <input type='password' name='password' value={Password} onChange={(e)=>{setpassword(e.target.value)}}/><br/>
+  Enter Email <input type='text' name='email' value={Email} onChange={(e)=>{setEmail(e.target.value)}} /><br/>
+  Enter Password <input type='password' name='password' value={Password} onChange={(e)=>{setpassword(e.target.value)}}/><br/>
     <button type='submit'>Login</button>
 </form>
     </>
