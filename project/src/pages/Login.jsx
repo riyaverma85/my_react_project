@@ -10,7 +10,17 @@ const Login = () => {
         let existuser=users.find((e)=>{
           return e.Email ==Email
         })
-        
+     if(!existuser){
+      alert("please register first") 
+      return  
+    }
+    if (Password!=existuser.Password){
+      alert("password invalid")
+      setpassword("")
+      return
+    }
+    alert("login successful")
+    navigate("/home")
     }
     <>
 <form onSubmit={hendleSubmit}>
