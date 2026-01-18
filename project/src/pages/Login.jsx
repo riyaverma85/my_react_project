@@ -5,6 +5,12 @@ const Login = () => {
     let [Password,setpassword]=useState("")
     let hendleSubmit =(e)=>{
         e.preventDefault()
+
+        let users=JSON.parse(localStorage.getItem("users")) || []
+        let existuser=users.find((e)=>{
+          return e.Email ==Email
+        })
+        
     }
     <>
 <form onSubmit={hendleSubmit}>
