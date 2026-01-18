@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 
 const Login = () => {
-    let [form,setForm]=useState("")
-    
+    let [Email,setEmail]=useState("")
+    let [Password,setpassword]=useState("")
+    let hendleSubmit
   return (
     <>
-<form>
-    Enter Email <input type='text' name='email'/><br/>
-    Enter Password <input type='password' name='password'/><br/>
+<form onSubmit={hendleSubmit}>
+    Enter Email <input type='text' name='email' value={Email} onChange={(e)=>{setEmail(e.target.value)}} /><br/>
+    Enter Password <input type='password' name='password' value={Password} onChange={(e)=>{setpassword(e.target.value)}}/><br/>
     <button type='submit'>Login</button>
 </form>
     </>
