@@ -5,8 +5,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contect from './pages/Contect'
 import Service from './pages/Service'
-import SignUp from './Sign-up'
-import Login from './pages/Login'
+import SignUp from './SignUp'
+import Login from './Login'
 const App = () => {
   return (
     <>

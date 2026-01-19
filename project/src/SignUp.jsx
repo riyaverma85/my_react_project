@@ -68,69 +68,69 @@
 
 
 
-import React from 'react'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-const SignUp = () => {
-let navigate=useNavigate()
+// import React from 'react'
+// import React, { useState } from 'react'
+// import { useNavigate } from 'react-router-dom'
+// const SignUp = () => {
+// let navigate=useNavigate()
 
-  let[form,setform]=useState({
-    name:"",
-    email:"",
-    number:"",
-    password:"",
-    cpassword:""
-  })
-  let handelChange=(e)=>{
-    setform({...form,[e.target.name]:e.target.value})
-  }
+//   let[form,setform]=useState({
+//     name:"",
+//     email:"",
+//     number:"",
+//     password:"",
+//     cpassword:""
+//   })
+//   let handelChange=(e)=>{
+//     setform({...form,[e.target.name]:e.target.value})
+//   }
 
-  let handelSubmit=(e)=>{
-    e.preventDefault();
-    let valid=true;
-    if( form.name.trim()==""){
-      alert(" please enter name")
-      valid=false
-  }
-  else if(isNaN(form.number)){
-    alert(" please enter valid number")
-    valid=false
-  }
-  if(valid){
+//   let handelSubmit=(e)=>{
+//     e.preventDefault();
+//     let valid=true;
+//     if( form.name.trim()==""){
+//       alert(" please enter name")
+//       valid=false
+//   }
+//   else if(isNaN(form.number)){
+//     alert(" please enter valid number")
+//     valid=false
+//   }
+//   if(valid){
 
-    let users=JSON.parse(localStorage.getItem("users")) || []
+//     let users=JSON.parse(localStorage.getItem("users")) || []
 
-    let existuser=users.find((e)=>{
-      return e.email==form.email
-    })
-    if (existuser){
-      alert("user already exist")
-      return
-    }
-    users.push(form)
-    localStorage.setItem("users",JSON.stringify(users))
-    alert("signup successfull")
-    navigate("/login")
-  }
-  }
-  return (
-    <>
+//     let existuser=users.find((e)=>{
+//       return e.email==form.email
+//     })
+//     if (existuser){
+//       alert("user already exist")
+//       return
+//     }
+//     users.push(form)
+//     localStorage.setItem("users",JSON.stringify(users))
+//     alert("signup successfull")
+//     navigate("/login")
+//   }
+//   }
+//   return (
+//     <>
   
-    <form onSubmit={handelSubmit}  className='text-gray-950 border-2  mt-16 ml-90 mr-90'>
-        <h1> signup</h1> <br/>
-       Enter Name<input type='text' name='name' value={form.name} onChange={handelChange}/><br/>
-       Enter Email<input type='email' name='email' value={form.email} onChange={handelChange}/><br/>
-       Enter Number<input type='number' name='number' value={form.number} onChange={handelChange}/><br/>
-       Enter Password<input type='password' name='password' value={form.password} onChange={handelChange}/><br/>
-       Enter Confirm Password<input type='password' name='cpassword' value={form.cpassword} onChange={handelChange}/><br/>
+//     <form onSubmit={handelSubmit}  className='text-gray-950 border-2  mt-16 ml-90 mr-90'>
+//         <h1> signup</h1> <br/>
+//        Enter Name<input type='text' name='name' value={form.name} onChange={handelChange}/><br/>
+//        Enter Email<input type='email' name='email' value={form.email} onChange={handelChange}/><br/>
+//        Enter Number<input type='number' name='number' value={form.number} onChange={handelChange}/><br/>
+//        Enter Password<input type='password' name='password' value={form.password} onChange={handelChange}/><br/>
+//        Enter Confirm Password<input type='password' name='cpassword' value={form.cpassword} onChange={handelChange}/><br/>
        
-       <button type='submit'>SignUp</button>
-    </form>
-    </>
-  )
-}
+//        <button type='submit'>SignUp</button>
+//     </form>
+//     </>
+//   )
+// }
 
-export default SignUp
+// export default SignUp
 
 
 
@@ -228,3 +228,106 @@ export default SignUp
 // };
 
 // export default SignUp;
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const SignUp = () => {
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    number: "",
+    password: "",
+    cpassword: ""
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    let valid = true;
+
+    if (form.name.trim() === "") {
+      alert("Please enter name");
+      valid = false;
+    } else if (isNaN(form.number)) {
+      alert("Please enter valid number");
+      valid = false;
+    }
+
+    if (valid) {
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      let existUser = users.find((e) => e.email === form.email);
+
+      if (existUser) {
+        alert("User already exists");
+        return;
+      }
+
+      users.push(form);
+      localStorage.setItem("users", JSON.stringify(users));
+
+      console.log("All users:", users);
+      alert("Signup successful!");
+      navigate("/login");
+    }
+  };
+
+  return (
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-purple-700 to-pink-500">
+      <form onSubmit={handleSubmit}
+        className="bg-white w-96 p-6 rounded-3xl shadow-2xl border-4 border-yellow-400 relative overflow-hidden"
+      >
+      
+        <div className="absolute -top-4 -left-4 w-8 h-8 bg-white rounded-full border-4 border-yellow-400"></div>
+        <div className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full border-4 border-yellow-400"></div>
+        <h1 className="text-3xl font-bold text-yellow-500 mb-6 text-center"> Movie Ticket Signup</h1>
+
+        <label className="block text-gray-700 font-semibold mb-1">
+          Name
+        </label>
+        <input type="text" name="name" value={form.name} onChange={handleChange}
+          className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          placeholder="Enter your name" />
+
+        <label className="block text-gray-700 font-semibold mb-1">
+          Email
+        </label>
+        <input type="email" name="email"value={form.email} onChange={handleChange}
+          className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          placeholder="Enter your email"/>
+
+        <label className="block text-gray-700 font-semibold mb-1">
+          Number
+        </label>
+        <input type="number"  name="number"  value={form.number} onChange={handleChange}
+          className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          placeholder="Enter your number"/>
+
+        <label className="block text-gray-700 font-semibold mb-1">
+          Password
+        </label>
+        <input type="password" name="password" value={form.password} onChange={handleChange}
+          className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          placeholder="Enter password"/>
+
+        <label className="block text-gray-700 font-semibold mb-1">
+          Confirm Password
+        </label>
+        <input type="password" name="cpassword" value={form.cpassword} onChange={handleChange}
+          className="w-full mb-6 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          placeholder="Confirm password"/>
+
+        <button type="submit"
+          className="w-full bg-yellow-400 text-white font-bold py-2 rounded-lg shadow-lg hover:bg-yellow-500 transition-all duration-300"
+        > Sign Up </button>
+      </form>
+    </div>
+  );
+};
+
+export default SignUp;

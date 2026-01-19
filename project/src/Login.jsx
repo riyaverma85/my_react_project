@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
     let [Email,setEmail]=useState("")
     let [Password,setpassword]=useState("")
+    let navigate=useNavigate()
     let hendleSubmit =(e)=>{
         e.preventDefault()
 
         let users=JSON.parse(localStorage.getItem("users")) || []
         let existuser=users.find((e)=>{
-          return e.Email ==Email
+          return e.email ==Email
         })
      if(!existuser){
       alert("please register first") 
