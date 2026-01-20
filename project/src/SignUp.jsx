@@ -228,10 +228,6 @@
 // };
 
 // export default SignUp;
-
-
- 
-      
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -284,39 +280,51 @@ const SignUp = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-purple-700 to-pink-500">
       <form onSubmit={handleSubmit}
-        className="bg-white w-96 p-6 rounded-3xl shadow-2xl border-4 border-yellow-400 relative overflow-hidden" >
+        className="bg-white w-96 p-6 rounded-3xl shadow-2xl border-4 border-yellow-400 relative overflow-hidden"
+      >
       
         <div className="absolute -top-4 -left-4 w-8 h-8 bg-white rounded-full border-4 border-yellow-400"></div>
         <div className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full border-4 border-yellow-400"></div>
         <h1 className="text-3xl font-bold text-yellow-500 mb-6 text-center"> Movie Ticket Signup</h1>
 
-        <label className="block text-gray-700 font-semibold mb-1"> Name</label>
+        <label className="block text-gray-700 font-semibold mb-1">
+          Name
+        </label>
         <input type="text" name="name" value={form.name} onChange={handleChange}
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your name" />
 
-        <label className="block text-gray-700 font-semibold mb-1"> Email</label>
+        <label className="block text-gray-700 font-semibold mb-1">
+          Email
+        </label>
         <input type="email" name="email"value={form.email} onChange={handleChange}
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your email"/>
 
-        <label className="block text-gray-700 font-semibold mb-1">Number</label>
+        <label className="block text-gray-700 font-semibold mb-1">
+          Number
+        </label>
         <input type="number"  name="number"  value={form.number} onChange={handleChange}
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your number"/>
 
-        <label className="block text-gray-700 font-semibold mb-1">Password</label>
+        <label className="block text-gray-700 font-semibold mb-1">
+          Password
+        </label>
         <input type="password" name="password" value={form.password} onChange={handleChange}
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter password"/>
 
-        <label className="block text-gray-700 font-semibold mb-1"> Confirm Password</label>
+        <label className="block text-gray-700 font-semibold mb-1">
+          Confirm Password
+        </label>
         <input type="password" name="cpassword" value={form.cpassword} onChange={handleChange}
           className="w-full mb-6 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Confirm password"/>
 
         <button type="submit"
-          className="w-full bg-yellow-400 text-white font-bold py-2 rounded-lg shadow-lg hover:bg-yellow-500 transition-all duration-300" > Sign Up </button>
+          className="w-full bg-yellow-400 text-white font-bold py-2 rounded-lg shadow-lg hover:bg-yellow-500 transition-all duration-300"
+        > Sign Up </button>
       </form>
     </div>
   );
