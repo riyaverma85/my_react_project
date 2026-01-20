@@ -306,8 +306,7 @@ const SignUp = () => {
           placeholder="Enter your number"/>
 
         <label className="block text-gray-700 font-semibold mb-1">
-          Password
-        </label>
+          Password</label>
         <input type="password" name="password" value={form.password} onChange={handleChange}
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter password"/>
