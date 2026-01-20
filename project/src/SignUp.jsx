@@ -316,8 +316,7 @@ const SignUp = () => {
           placeholder="Confirm password"/>
 
         <button type="submit"
-          className="w-full bg-yellow-400 text-white font-bold py-2 rounded-lg shadow-lg hover:bg-yellow-500 transition-all duration-300"
-        > Sign Up </button>
+          className="w-full bg-yellow-400 text-white font-bold py-2 rounded-lg shadow-lg hover:bg-yellow-500 transition-all duration-300" > Sign Up </button>
       </form>
     </div>
   );
