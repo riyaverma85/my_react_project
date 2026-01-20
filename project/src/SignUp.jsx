@@ -24,8 +24,8 @@ const SignUp = () => {
     if (form.name.trim() === "") {
       alert("Please enter name");
       valid = false;
-    } else if (isNaN(form.number)) {
-      alert("Please enter valid number");
+    } else if (isNaN(form.email)) {
+      alert("Please enter valid email");
       valid = false;
     }
 
@@ -80,7 +80,7 @@ const SignUp = () => {
           placeholder="Enter your email"
         />
 
-        <label className="block text-gray-200 font-semibold mb-1">Number</label>
+        {/* <label className="block text-gray-200 font-semibold mb-1">Number</label>
         <input
           type="number"
           name="number"
@@ -88,7 +88,7 @@ const SignUp = () => {
           onChange={handleChange}
           className="w-full mb-4 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your number"
-        />
+        /> */}
 
         <label className="block text-gray-200 font-semibold mb-1">Password</label>
         <input
