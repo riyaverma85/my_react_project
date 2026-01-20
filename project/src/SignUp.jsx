@@ -290,9 +290,7 @@ const SignUp = () => {
         <div className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full border-4 border-yellow-400"></div>
         <h1 className="text-3xl font-bold text-yellow-500 mb-6 text-center"> Movie Ticket Signup</h1>
 
-        <label className="block text-gray-700 font-semibold mb-1">
-          Name
-        </label>
+        <label className="block text-gray-700 font-semibold mb-1"> Name</label>
         <input type="text" name="name" value={form.name} onChange={handleChange}
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your name" />
