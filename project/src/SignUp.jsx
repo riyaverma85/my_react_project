@@ -300,9 +300,7 @@ const SignUp = () => {
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your email"/>
 
-        <label className="block text-gray-700 font-semibold mb-1">
-          Number
-        </label>
+        <label className="block text-gray-700 font-semibold mb-1">Number</label>
         <input type="number"  name="number"  value={form.number} onChange={handleChange}
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your number"/>
