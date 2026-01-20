@@ -310,8 +310,7 @@ const SignUp = () => {
           className="w-full mb-4 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter password"/>
 
-        <label className="block text-gray-700 font-semibold mb-1">
-          Confirm Password</label>
+        <label className="block text-gray-700 font-semibold mb-1"> Confirm Password</label>
         <input type="password" name="cpassword" value={form.cpassword} onChange={handleChange}
           className="w-full mb-6 p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Confirm password"/>
