@@ -284,8 +284,7 @@ const SignUp = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-purple-700 to-pink-500">
       <form onSubmit={handleSubmit}
-        className="bg-white w-96 p-6 rounded-3xl shadow-2xl border-4 border-yellow-400 relative overflow-hidden"
-      >
+        className="bg-white w-96 p-6 rounded-3xl shadow-2xl border-4 border-yellow-400 relative overflow-hidden" >
       
         <div className="absolute -top-4 -left-4 w-8 h-8 bg-white rounded-full border-4 border-yellow-400"></div>
         <div className="absolute -top-4 -right-4 w-8 h-8 bg-white rounded-full border-4 border-yellow-400"></div>
