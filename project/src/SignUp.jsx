@@ -24,10 +24,10 @@ const SignUp = () => {
     if (form.name.trim() === "") {
       alert("Please enter name");
       valid = false;
-    } else if (isNaN(form.email)) {
-      alert("Please enter valid email");
-      valid = false;
-    }
+    // } else if (isNaN(form.number)) {
+    //   alert("Please enter valid number");
+    //   valid = false;
+     }
 
     if (valid) {
       let users = JSON.parse(localStorage.getItem("users")) || [];
