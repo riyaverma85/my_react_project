@@ -7,6 +7,7 @@ import Contect from './pages/Contect'
 import Service from './pages/Service'
 import SignUp from './SignUp'
 import Login from './Login'
+import MovieDetails from './pages/MovieDetails'
 const App = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="about" element={<About/>}/>
         <Route path="contect" element={<Contect/>}/>
         <Route path="service" element={<Service/>}/>
+         <Route path="movie/:type" element={<MovieDetails />} />
         </Route>
     </Routes>
     </>
