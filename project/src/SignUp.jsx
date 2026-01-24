@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./App.css"; // 👈 CSS yahan add karna zaroori hai
+import "./App.css";
+
 const SignUp = () => {
   const navigate = useNavigate();
 
@@ -24,34 +25,48 @@ const SignUp = () => {
     if (form.name.trim() === "") {
       alert("Please enter name");
       valid = false;
-    // } else if (isNaN(form.number)) {
-    //   alert("Please enter valid number");
-    //   valid = false;
-     }
+    }
+
+    if (form.email.trim() === "") {
+      alert("Please enter email");
+      valid = false;
+    }
+
+    if (form.password.trim() === "") {
+      alert("Please enter password");
+      valid = false;
+    }
+
+    if (form.password !== form.cpassword) {
+      alert("Passwords do not match!");
+      valid = false;
+    }
 
     if (valid) {
+      // 🔹 Get existing users
       let users = JSON.parse(localStorage.getItem("users")) || [];
-      let existUser = users.find((e) => e.email === form.email);
 
-      // if (existUser) {
-      //   alert("User already exists");
-      //   return;
-      // }
-
+      // 🔹 Add new user data
       users.push(form);
+
+      // 🔹 Save updated data to localStorage
       localStorage.setItem("users", JSON.stringify(users));
 
+      // 🔹 Console me pura data dikhana
+      console.log("✅ New user added:", form);
+      console.log("📦 All Users in LocalStorage:", users);
+
       alert("Signup successful!");
+
+      // 🔹 Navigate ya form clear karne ke liye (optional)
       navigate("/login");
     }
   };
 
   return (
     <div className="signup-bg flex justify-center items-center min-h-screen relative overflow-hidden">
-      {/* 🔹 Animated Background Lights */}
       <div className="absolute inset-0 bg-animated"></div>
 
-      {/* 🔹 Transparent Glass Form */}
       <form
         onSubmit={handleSubmit}
         className="relative z-10 w-96 p-8 rounded-3xl backdrop-blur-md bg-white/10 border border-yellow-400 shadow-2xl"
@@ -79,16 +94,6 @@ const SignUp = () => {
           className="w-full mb-4 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your email"
         />
-
-        {/* <label className="block text-gray-200 font-semibold mb-1">Number</label>
-        <input
-          type="number"
-          name="number"
-          value={form.number}
-          onChange={handleChange}
-          className="w-full mb-4 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-          placeholder="Enter your number"
-        /> */}
 
         <label className="block text-gray-200 font-semibold mb-1">Password</label>
         <input

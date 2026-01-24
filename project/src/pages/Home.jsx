@@ -76,6 +76,100 @@ const Home = () => {
 
         </div>
       </section>
+
+      <div className="min-h-screen bg-gradient-to-b from-[#0f1724] to-[#050b18] text-white">
+      {/* 🔹 Hero Section */}
+      <section className="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-20">
+        <div className="max-w-xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            Experience Cinema Like Never Before 🍿
+          </h1>
+          <p className="text-gray-400 mb-6">
+            Welcome to <span className="text-pink-400 font-semibold">Move Ticket</span> — your one-stop
+            destination for booking movie tickets quickly and easily.
+            Explore the latest releases and enjoy your favorite shows hassle-free!
+          </p>
+          <div className="flex gap-4">
+            <button className="bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 rounded-lg font-semibold hover:scale-105 transition">
+              Book Tickets
+            </button>
+            <button className="border border-white/10 px-6 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+              View Movies
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-10 md:mt-0 flex justify-center">
+          <div className="w-72 h-72 bg-gradient-to-tr from-pink-500/20 to-purple-500/20 rounded-3xl flex items-center justify-center shadow-xl border border-white/10">
+            <h2 className="text-3xl font-bold text-gray-300">🎥 Move Ticket</h2>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔸 Section 2: Trending Movies */}
+      <section className="px-8 md:px-16 py-16 bg-white/5 backdrop-blur-sm border-t border-white/10">
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          🔥 Trending Movies
+        </h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {[
+            { title: "Avatar: The Way of Water", img: "https://m.media-amazon.com/images/I/81YPgi4vpzL._AC_UF894,1000_QL80_.jpg" },
+            { title: "Spider-Man: No Way Home", img: "https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF1000,1000_QL80_.jpg" },
+            { title: "Oppenheimer", img: "https://m.media-amazon.com/images/I/71bmX4H2V6L._AC_UF1000,1000_QL80_.jpg" },
+            { title: "The Batman", img: "https://m.media-amazon.com/images/I/91j0MBsDlvL._AC_UF894,1000_QL80_.jpg" },
+          ].map((movie, i) => (
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:-translate-y-2 transition cursor-pointer"
+            >
+              <img
+                src={movie.img}
+                alt={movie.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4 text-center">
+                <h3 className="font-semibold">{movie.title}</h3>
+                <button className="mt-2 bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-1 rounded-md text-sm font-semibold hover:scale-105 transition">
+                  Book Now
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 🔹 Section 3: Why Choose Move Ticket */}
+      <section className="px-8 md:px-16 py-16">
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          🎬 Why Choose Move Ticket?
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white/5 p-6 rounded-xl border border-white/10 hover:-translate-y-2 transition text-center">
+            <div className="text-3xl mb-3">⚡</div>
+            <h4 className="font-semibold mb-2">Fast & Easy</h4>
+            <p className="text-gray-400 text-sm">
+              Book your tickets in seconds with our clean and quick interface.
+            </p>
+          </div>
+
+          <div className="bg-white/5 p-6 rounded-xl border border-white/10 hover:-translate-y-2 transition text-center">
+            <div className="text-3xl mb-3">💳</div>
+            <h4 className="font-semibold mb-2">Multiple Payments</h4>
+            <p className="text-gray-400 text-sm">
+              Pay your way — Credit Card, UPI, Netbanking, or Wallet.
+            </p>
+          </div>
+
+          <div className="bg-white/5 p-6 rounded-xl border border-white/10 hover:-translate-y-2 transition text-center">
+            <div className="text-3xl mb-3">🎉</div>
+            <h4 className="font-semibold mb-2">Exclusive Offers</h4>
+            <p className="text-gray-400 text-sm">
+              Enjoy discounts, coupons, and festival movie combos every week!
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
     </>
   );
 };
