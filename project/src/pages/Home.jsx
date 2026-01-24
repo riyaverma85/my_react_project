@@ -113,14 +113,14 @@ const Home = () => {
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {[
-            { title: "Avatar: The Way of Water", img: "https://m.media-amazon.com/images/I/81YPgi4vpzL._AC_UF894,1000_QL80_.jpg" },
+            { title: "Border 2", img: "./public/111.jpg" },
             { title: "Spider-Man: No Way Home", img: "https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF1000,1000_QL80_.jpg" },
-            { title: "Oppenheimer", img: "https://m.media-amazon.com/images/I/71bmX4H2V6L._AC_UF1000,1000_QL80_.jpg" },
-            { title: "The Batman", img: "https://m.media-amazon.com/images/I/91j0MBsDlvL._AC_UF894,1000_QL80_.jpg" },
+            { title: "Oppenheimer", img: "./public/download (1).jpg" },
+            { title: "The Batman", img: "./public/33.jpg" },
           ].map((movie, i) => (
             <div
               key={i}
-              className="rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:-translate-y-2 transition cursor-pointer"
+              className="rounded-xl overflow -hidden bg-white/5 border border-white/10 hover:-translate-y-2 transition cursor-pointer"
             >
               <img
                 src={movie.img}
