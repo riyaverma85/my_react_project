@@ -26,7 +26,7 @@ const Contact = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-10 items-center">
-        {/* 🔹 Contact Form */}
+      
         <form
           onSubmit={handleSubmit}
           className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md shadow-lg"
@@ -78,7 +78,6 @@ const Contact = () => {
           </button>
         </form>
 
-        {/* 🔹 Contact Info */}
         <div className="space-y-6">
           <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md shadow-lg">
             <h3 className="text-2xl font-semibold mb-2">📍 Office Location</h3>
