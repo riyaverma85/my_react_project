@@ -43,10 +43,8 @@ const SignUp = () => {
     }
 
     if (valid) {
-      // 🔹 Get existing users
       let users = JSON.parse(localStorage.getItem("users")) || [];
 
-      // 🔹 Add new user data
       users.push(form);
 
       localStorage.setItem("users", JSON.stringify(users));
