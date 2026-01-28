@@ -53,6 +53,9 @@ const Home = () => {
     },
     { title: 'Oppenheimer', img: './public/download (1).jpg' },
     { title: 'The Batman', img: './public/33.jpg' },
+    { title: 'Inception', img: './public/innnn.jpg' },
+    { title: 'Interstellar', img: './public/interstaller.jpg' },
+    { title: 'Avatar: The Way of Water', img: './public/avatar.jpg' },
   ];
 
   return (
