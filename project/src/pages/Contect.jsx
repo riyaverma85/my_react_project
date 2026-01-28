@@ -100,7 +100,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* 🔹 Bottom CTA */}
+      
       <div className="mt-16 text-center bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md shadow-lg">
         <h2 className="text-2xl font-bold mb-2">
           Let’s make your next movie night unforgettable 🍿
