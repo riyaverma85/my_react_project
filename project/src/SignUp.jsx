@@ -49,16 +49,13 @@ const SignUp = () => {
       // 🔹 Add new user data
       users.push(form);
 
-      // 🔹 Save updated data to localStorage
       localStorage.setItem("users", JSON.stringify(users));
 
-      // 🔹 Console me pura data dikhana
       console.log("✅ New user added:", form);
       console.log("📦 All Users in LocalStorage:", users);
 
       alert("Signup successful!");
 
-      // 🔹 Navigate ya form clear karne ke liye (optional)
       navigate("/login");
     }
   };
