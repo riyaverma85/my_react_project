@@ -8,6 +8,7 @@ import Service from './pages/Service'
 import SignUp from './SignUp'
 import Login from './Login'
 import MovieDetails from './pages/MovieDetails'
+import Movies from './pages/Movies'
 const App = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="contect" element={<Contect/>}/>
         <Route path="service" element={<Service/>}/>
          <Route path="movie/:type" element={<MovieDetails />} />
+         <Route path='movies' element={<Movies/>}/>
         </Route>
     </Routes>
     </>

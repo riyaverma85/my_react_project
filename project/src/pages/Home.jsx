@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RippleGrid from './RippleGrid';
+import Footer from './Footer';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,6 +12,9 @@ const Home = () => {
     seat: '',
     snacks: '',
   });
+
+  // 🔹 Ref for Trending Section (Book Tickets scroll)
+  const trendingRef = useRef(null);
 
   const handleCardClick = (type) => {
     navigate(`/movie/${type}`);
@@ -30,6 +34,15 @@ const Home = () => {
     );
     setSelectedMovie(null);
     setBookingData({ theatre: '', time: '', seat: '', snacks: '' });
+  };
+
+  // 🔸 Button Functions
+  const scrollToTrending = () => {
+    trendingRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const goToMoviesPage = () => {
+    navigate('/movies');
   };
 
   const movies = [
@@ -136,10 +149,19 @@ const Home = () => {
               and enjoy your favorite shows hassle-free!
             </p>
             <div className="flex gap-4">
-              <button className="bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 rounded-lg font-semibold hover:scale-105 transition">
+              {/* ✅ Book Tickets scrolls down */}
+              <button
+                onClick={scrollToTrending}
+                className="bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 rounded-lg font-semibold hover:scale-105 transition"
+              >
                 Book Tickets
               </button>
-              <button className="border border-white/10 px-6 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+
+              {/* ✅ View Movies navigates to movies page */}
+              <button
+                onClick={goToMoviesPage}
+                className="border border-white/10 px-6 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition"
+              >
                 View Movies
               </button>
             </div>
@@ -153,7 +175,10 @@ const Home = () => {
         </section>
 
         {/* 🔸 Section 2: Trending Movies + Booking */}
-        <section className="px-8 md:px-16 py-16 bg-white/5 backdrop-blur-sm border-t border-white/10">
+        <section
+          ref={trendingRef}
+          className="px-8 md:px-16 py-16 bg-white/5 backdrop-blur-sm border-t border-white/10"
+        >
           <h2 className="text-3xl font-bold mb-8 text-center">🔥 Trending Movies</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {movies.map((movie, i) => (
@@ -195,9 +220,9 @@ const Home = () => {
                           className="bg-transparent border border-white/20 px-3 py-1 rounded w-full"
                         >
                           <option value="">Select</option>
-                          <option value="PVR">DB City</option>
-                          <option value="INOX">Rang Mahal</option>
-                          <option value="Cinepolis">Jyoti Talkies</option>
+                          <option value="DB City">DB City</option>
+                          <option value="Rang Mahal">Rang Mahal</option>
+                          <option value="Jyoti Talkies">Jyoti Talkies</option>
                         </select>
                       </td>
                     </tr>
@@ -302,6 +327,7 @@ const Home = () => {
           </div>
         </section>
       </div>
+      <Footer/>
     </>
   );
 };
