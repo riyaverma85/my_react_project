@@ -44,23 +44,22 @@ const SignUp = () => {
 
     if (valid) {
       let users = JSON.parse(localStorage.getItem("users")) || [];
-
       users.push(form);
-
       localStorage.setItem("users", JSON.stringify(users));
-
-      console.log("✅ New user added:", form);
-      console.log("📦 All Users in LocalStorage:", users);
-
       alert("Signup successful!");
-
       navigate("/login");
     }
   };
 
   return (
     <div className="signup-bg flex justify-center items-center min-h-screen relative overflow-hidden">
-      <div className="absolute inset-0 bg-animated"></div>
+      <video autoPlay loop  muted  playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/1823-150669776_large.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-black/60"></div>
 
       <form
         onSubmit={handleSubmit}
@@ -71,11 +70,7 @@ const SignUp = () => {
         </h1>
 
         <label className="block text-gray-200 font-semibold mb-1">Name</label>
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
+        <input name="name"  value={form.name}  onChange={handleChange}
           className="w-full mb-4 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
           placeholder="Enter your name"
         />
@@ -112,12 +107,9 @@ const SignUp = () => {
           placeholder="Confirm password"
         />
 
-        <button
-          type="submit"
+        <button type="submit"
           className="w-full bg-yellow-400 text-black font-bold py-2 rounded-lg shadow-lg hover:bg-yellow-500 transition-all duration-300"
-        >
-          Sign Up
-        </button>
+        > Sign Up</button>
       </form>
     </div>
   );
