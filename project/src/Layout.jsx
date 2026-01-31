@@ -21,7 +21,7 @@ const Layout = () => {
               { name: "Home", to: "home" },
               { name: "About", to: "about" },
               { name: "Service", to: "service" },
-              { name: "Contact", to: "contect" },
+              { name: "Contact", to: "contact" },
               { name: "Sign Up", to: "signup" },
             ].map((item, i) => (
               <Link
@@ -53,7 +53,7 @@ const Layout = () => {
               { name: "Home", to: "home" },
               { name: "About", to: "about" },
               { name: "Service", to: "service" },
-              { name: "Contact", to: "contect" },
+              { name: "Contact", to: "contact" },
               { name: "Sign Up", to: "signup" },
             ].map((item, i) => (
               <Link
