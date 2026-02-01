@@ -8,7 +8,6 @@ const SignUp = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    number: "",
     password: "",
     cpassword: "",
   });
@@ -52,64 +51,56 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signup-bg flex justify-center items-center min-h-screen relative overflow-hidden">
-      <video autoPlay loop  muted  playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
+    <div className="signup-container flex justify-center items-center min-h-screen relative overflow-hidden">
+      <video  autoPlay  loop  muted  playsInline className="video-bg absolute inset-0 w-full h-full object-cover" >
         <source src="/1823-150669776_large.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="overlay absolute inset-0 bg-black/70"></div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="relative z-10 w-96 p-8 rounded-3xl backdrop-blur-md bg-white/10 border border-yellow-400 shadow-2xl"
+      <form onSubmit={handleSubmit}
+        className="form-card relative z-20 w-80 p-6 bg-white/20 backdrop-blur-xl border-2 border-yellow-400/70 rounded-2xl shadow-2xl hover:shadow-yellow-400/30 hover:scale-[1.02] transition-all duration-300"
       >
-        <h1 className="text-3xl font-extrabold text-yellow-400 mb-6 text-center tracking-wide">
-          🎬 Movie Ticket SignUp
+        <h1 className="title text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-6 text-center">
+           Movie SignUp
         </h1>
 
-        <label className="block text-gray-200 font-semibold mb-1">Name</label>
-        <input name="name"  value={form.name}  onChange={handleChange}
-          className="w-full mb-4 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-          placeholder="Enter your name"
-        />
+        <div className="input-group space-y-4">
+          <div>
+            <label className="label block text-yellow-100 font-semibold mb-2 text-sm"> Name</label>
+            <input  name="name"  value={form.name}  onChange={handleChange} className="input-field w-full p-3 rounded-xl bg-white/10 backdrop-blur border border-white/30 text-white placeholder-yellow-200 font-medium text-base focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:border-yellow-400/60 transition-all duration-200" placeholder="Enter your name" />
+          </div>
 
-        <label className="block text-gray-200 font-semibold mb-1">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full mb-4 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-          placeholder="Enter your email"
-        />
+          <div>
+            <label className="label block text-yellow-100 font-semibold mb-2 text-sm">Email</label>
+            <input type="email" name="email" value={form.email} onChange={handleChange} className="input-field w-full p-3 rounded-xl bg-white/10 backdrop-blur border border-white/30 text-white placeholder-yellow-200 font-medium text-base focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:border-yellow-400/60 transition-all duration-200" placeholder="Enter your email"/>
+          </div>
 
-        <label className="block text-gray-200 font-semibold mb-1">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={form.password}
-          onChange={handleChange}
-          className="w-full mb-4 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-          placeholder="Enter password"
-        />
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="label block text-yellow-100 font-semibold mb-2 text-sm">Password</label>
+              <input type="password" name="password" value={form.password} onChange={handleChange} className="input-field w-full p-3 rounded-xl bg-white/10 backdrop-blur border border-white/30 text-white placeholder-yellow-200 font-medium text-base focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:border-yellow-400/60 transition-all duration-200" placeholder="Password"/>
+            </div>
 
-        <label className="block text-gray-200 font-semibold mb-1">
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          name="cpassword"
-          value={form.cpassword}
-          onChange={handleChange}
-          className="w-full mb-6 p-2 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-          placeholder="Confirm password"
-        />
+            <div>
+              <label className="label block text-yellow-100 font-semibold mb-2 text-sm">Confirm</label>
+              <input type="password" name="cpassword" value={form.cpassword} onChange={handleChange} className="input-field w-full p-3 rounded-xl bg-white/10 backdrop-blur border border-white/30 text-white placeholder-yellow-200 font-medium text-base focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:border-yellow-400/60 transition-all duration-200" placeholder="Confirm" />
+            </div>
+          </div>
+        </div>
 
-        <button type="submit"
-          className="w-full bg-yellow-400 text-black font-bold py-2 rounded-lg shadow-lg hover:bg-yellow-500 transition-all duration-300"
-        > Sign Up</button>
+        <button  type="submit"
+          className="submit-btn w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold py-3 px-6 rounded-xl text-lg shadow-lg mt-6 hover:from-yellow-500 hover:shadow-yellow-400/40 hover:scale-105 transition-all duration-200"
+        > Sign Up </button>
+
+        <p className="login-link text-center mt-4 text-yellow-100 text-sm">
+          Already have account? 
+          <button 
+            type="button" 
+            onClick={() => navigate("/login")}
+            className="ml-1 text-yellow-300 hover:text-white font-bold underline"
+          >  Login </button>
+        </p>
       </form>
     </div>
   );
