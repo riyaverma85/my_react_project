@@ -46,17 +46,18 @@ const Home = () => {
   };
 
   const movies = [
-    { title: 'Border 2', img: './public/12.jpg' },
-    {
-      title: 'Spider-Man: No Way Home',
-      img: 'https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF1000,1000_QL80_.jpg',
-    },
-    { title: 'Oppenheimer', img: './public/download (1).jpg' },
-    { title: 'The Batman', img: './public/33.jpg' },
-    { title: 'Inception', img: './public/innnn.jpg' },
-    { title: 'Interstellar', img: './public/interstaller.jpg' },
-    { title: 'Avatar: The Way of Water', img: './public/avatar.jpg' },
-  ];
+  { title: 'Border 2', img: '/12.jpg' },
+  {
+    title: 'Spider-Man: No Way Home',
+    img: 'https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF1000,1000_QL80_.jpg',
+  },
+  { title: 'Oppenheimer', img: '/download (1).jpg' },
+  { title: 'The Batman', img: '/33.jpg' },
+  { title: 'Inception', img: '/innnn.jpg' },
+  { title: 'Interstellar', img: '/interstaller.jpg' },
+  { title: 'Avatar: The Way of Water', img: '/avatar.jpg' },
+];
+
 
   return (
     <>
