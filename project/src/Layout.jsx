@@ -7,15 +7,15 @@ const Layout = () => {
 
   return (
     <>
-      {/* 🔥 Navbar Section */}
+      
       <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-[#0f1724] via-[#1e0b45] to-[#0f1724] bg-opacity-90 backdrop-blur-md text-white shadow-[0_0_20px_rgba(255,0,255,0.3)] z-50 border-b border-pink-500/20">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-          {/* 🔹 Logo */}
+          
           <h1 className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-pink-500 to-cyan-400 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300">
-            🎬 MovieHub
+            MovieHub
           </h1>
 
-          {/* 🔹 Desktop Menu */}
+        
           <nav className="hidden md:flex gap-8 text-lg font-medium">
             {[
               { name: "Home", to: "home" },
@@ -37,7 +37,7 @@ const Layout = () => {
             ))}
           </nav>
 
-          {/* 🔹 Mobile Menu Toggle */}
+          
           <div
             className="md:hidden cursor-pointer text-3xl hover:text-pink-400 transition"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -46,7 +46,7 @@ const Layout = () => {
           </div>
         </div>
 
-        {/* 🔹 Mobile Menu */}
+        
         {menuOpen && (
           <div className="md:hidden flex flex-col items-center gap-6 bg-gradient-to-b from-[#0f1724] to-[#1e0b45] pb-6 pt-2 border-t border-pink-500/20 animate-slideDown">
             {[
@@ -69,7 +69,6 @@ const Layout = () => {
         )}
       </header>
 
-      {/* 🔹 Main Section */}
       <main className="pt-20">
         <Outlet />
       </main>
